@@ -97,7 +97,7 @@
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       //console.log('thisProduct.cartButton ', thisProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
-      //console.log('thisProduct.priceElem ',  thisProduct.priceElem);
+      //console.log('thisProduct.priceElem ', thisProduct.priceElem);
     }
 
     initAccordion() {
@@ -115,33 +115,33 @@
         /* [DONE] prevent default action for event */
         event.preventDefault();
 
-        /* toggle active class on element of thisProduct */
+        /* [DONE] toggle active class on element of thisProduct */
         thisProduct.element.classList.toggle('active');
         //console.log('click!');
 
-        /* find all active products */
+        /* [DONE] find all active products */
         const activeProducts = document.querySelectorAll('.product.active');
         //console.log(activeProducts);
 
-        /* START LOOP: for each active product */
+        /* [DONE] START LOOP: for each active product */
         for (let activeProduct of activeProducts) {
           //console.log(activeProduct);
 
-          /* START: if the active product isn't the element of thisProduct */
+          /* [DONE] START: if the active product isn't the element of thisProduct */
           if (activeProduct != thisProduct.element) {
             //console.log(activeProducts);
             //console.log(thisProduct);
 
-            /* remove class active for the active product */
+            /* [DONE] remove class active for the active product */
             activeProduct.classList.remove('active');
 
-            /* END: if the active product isn't the element of thisProduct */
+            /* [DONE] END: if the active product isn't the element of thisProduct */
           }
 
-          /* END LOOP: for each active product */
+          /* [DONE] END LOOP: for each active product */
         }
 
-        /* END: click event listener to trigger */
+        /* [DONE] END: click event listener to trigger */
       });
     }
 
@@ -167,7 +167,46 @@
 
     processOrder() {
       const thisProduct = this;
-      console.log('processOrder');
+      //console.log('processOrder');
+
+      /* read data from the form and set it as formData const*/
+      const formData = utils.serializeFormToObject(thisProduct.form);
+      //console.log('formData: ', formData);
+
+      /* set variable price to equal thisProduct.data.price */
+      let price = thisProduct.data.price;
+      //console.log('price: ', price);
+
+      /* START LOOP: for each paramId in thisProduct.data.params */
+      for (let paramId in thisProduct.data.params) {
+        console.log('paramId: ', paramId);
+        console.log('thisProduct.data.params ', thisProduct.data.params);
+
+        /* save the element in thisProduct.data.params with key paramId as const param */
+        //const param = thisProduct.element.paramId;
+        //console.log('param ', param);
+
+        /* START LOOP: for each optionId in param.options */
+
+          /* save the element in param.options with key optionId as const option */
+
+          /* START IF: if option is selected and option is not default */
+          /* add price of option to variable price */
+          /* END IF: if option is selected and option is not default */
+          /* START ELSE IF: if option is not selected and option is default */
+          /* deduct price of option from price */
+
+          /* END ELSE IF: if option is not selected and option is default */
+
+
+          /* END LOOP: for each optionId in param.options */
+
+        /* END LOOP: for each paramId in thisProduct.data.params */
+      }
+
+      /* add final price to thisProduct.priceElem */
+      thisProduct.priceElem.innerHTML = price;
+
     }
   }
 
