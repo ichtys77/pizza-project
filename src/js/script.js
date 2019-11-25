@@ -98,6 +98,8 @@
       //console.log('thisProduct.cartButton ', thisProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
       //console.log('thisProduct.priceElem ', thisProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
+      //console.log('thisProduct.imageWrapper: ', thisProduct.imageWrapper);
     }
 
     initAccordion() {
