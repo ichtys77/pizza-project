@@ -218,6 +218,23 @@
             /* [DONE] END ELSE IF: if option is not selected and option is default */
           }
 
+          /* [NEW] set const productPictures to selected pictures */
+
+          const productPictures = thisProduct.imageWrapper.querySelectorAll('.' + paramId + '-' + optionId);
+          console.log(productPictures);
+
+          /* [NEW] add acitve class is option selected is true */
+
+          if(optionSelected) {
+            for(let productPicture of productPictures) {
+              productPicture.classList.add(classNames.menuProduct.imageVisible);
+            }
+          } else {
+            for(let productPicture of productPictures) {
+              productPicture.classList.remove(classNames.menuProduct.imageVisible);
+            }
+          }
+
           /* [DONE] END LOOP: for each optionId in param.options */
         }
 
