@@ -63,6 +63,7 @@
       thisProduct.getElements();
       thisProduct.initAccordion();
       thisProduct.initOrderForm();
+      thisProduct.initAmountWidget();
       thisProduct.processOrder();
 
       //console.log('new Product:', thisProduct);
@@ -100,6 +101,8 @@
       //console.log('thisProduct.priceElem ', thisProduct.priceElem);
       thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
       //console.log('thisProduct.imageWrapper: ', thisProduct.imageWrapper);
+      thisProduct.amountWidgetElem = thisProduct.element.querySelector(select.menuProduct.amountWidget);
+      console.log('thisProduct.amountWidgetElem: ', thisProduct.amountWidgetElem);
     }
 
     initAccordion() {
@@ -221,16 +224,16 @@
           /* [NEW] set const productPictures to selected pictures */
 
           const productPictures = thisProduct.imageWrapper.querySelectorAll('.' + paramId + '-' + optionId);
-          console.log(productPictures);
+          //console.log(productPictures);
 
           /* [NEW] add acitve class is option selected is true */
 
-          if(optionSelected) {
-            for(let productPicture of productPictures) {
+          if (optionSelected) {
+            for (let productPicture of productPictures) {
               productPicture.classList.add(classNames.menuProduct.imageVisible);
             }
           } else {
-            for(let productPicture of productPictures) {
+            for (let productPicture of productPictures) {
               productPicture.classList.remove(classNames.menuProduct.imageVisible);
             }
           }
@@ -245,6 +248,34 @@
       thisProduct.priceElem.innerHTML = price;
 
     }
+
+    initAmountWidget() {
+      const thisProduct = this;
+
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+      console.log('thisProduct.amountWidget: ', thisProduct.amountWidget);
+    }
+  }
+
+  class AmountWidget {
+    constructor(element) {
+      const thisWidget = this;
+
+      thisWidget.getElements(element);
+      console.log('AmountWidget: ', AmountWidget);
+      console.log('constructor elements: ', element);
+
+    }
+
+    getElements(element){
+      const thisWidget = this;
+
+      thisWidget.element = element;
+      thisWidget.input = thisWidget.element.querySelector(select.widgets.amount.input);
+      thisWidget.linkDecrease = thisWidget.element.querySelector(select.widgets.amount.linkDecrease);
+      thisWidget.linkIncrease = thisWidget.element.querySelector(select.widgets.amount.linkIncrease);
+    }
+
   }
 
   const app = {
