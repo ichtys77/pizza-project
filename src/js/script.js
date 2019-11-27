@@ -376,7 +376,7 @@
       thisCart.products = [];
 
       thisCart.getElements(element);
-      thisCart.initActions(element);
+      thisCart.initActions();
 
       console.log('thisCart: ', thisCart);
     }
@@ -396,7 +396,6 @@
       thisCart.dom.toggleTrigger.addEventListener('click', function(event){
         event.preventDefault();
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
-
       });
     }
 
