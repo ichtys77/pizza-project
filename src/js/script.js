@@ -579,6 +579,7 @@
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
       thisCartProduct.initActions();
+      thisCartProduct.getData();
 
       //console.log('thisCartProduct: ', thisCartProduct);
       //console.log('productData: ', menuProduct);
