@@ -539,6 +539,13 @@
         products: []
       };
 
+      for(let product of thisCart.products) {
+        console.log('product: ', product);
+        payload.products.push(product.getData());
+      }
+
+
+
       const options = {
         method: 'POST',
         headers: {
@@ -633,6 +640,20 @@
         event.preventDefault();
         thisCartProduct.remove();
       });
+    }
+
+    getData() {
+      const thisCartProduct = this;
+      const payloadData = {};
+
+      payloadData.id = thisCartProduct.name;
+      payloadData.amount = thisCartProduct.amount;
+      payloadData.price = thisCartProduct.price;
+      payloadData.priceSingle = thisCartProduct.priceSingle;
+      payloadData.params = thisCartProduct.params;
+
+      return payloadData;
+
     }
 
   }
