@@ -1,5 +1,5 @@
-import {select, settings, classNames, templates} from '../settings.js';
-import {utils} from '../utils.js';
+import { select, settings, classNames, templates } from '../settings.js';
+import { utils } from '../utils.js';
 import CartProduct from './CartProduct.js';
 
 class Cart {
@@ -139,7 +139,7 @@ class Cart {
       products: []
     };
 
-    for(let product of thisCart.products) {
+    for (let product of thisCart.products) {
       console.log('product: ', product);
       payload.products.push(product.getData());
     }
