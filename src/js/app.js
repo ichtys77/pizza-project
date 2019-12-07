@@ -103,6 +103,11 @@ const app = {
     });
   },
 
+  initBooking: function () {
+    //const thisApp = this;
+    console.log('test');
+  },
+
   init: function () {
     const thisApp = this;
     //console.log('*** App starting ***');
@@ -116,6 +121,7 @@ const app = {
     thisApp.initData();
     //thisApp.initMenu();
     thisApp.initCart();
+    thisApp.initBooking();
   },
 
 };
