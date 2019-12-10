@@ -30,7 +30,7 @@ class Booking {
     thisBooking.dom.peopleAmount = document.querySelector(select.booking.peopleAmount);
     thisBooking.dom.hoursAmount = document.querySelector(select.booking.hoursAmount);
     thisBooking.dom.datePicker = document.querySelector(select.widgets.datePicker.wrapper);
-    //console.log('datePickerWrapper: ', thisBooking.dom.datePicker);
+    console.log('datePickerWrapper: ', thisBooking.dom.datePicker);
 
   }
 
