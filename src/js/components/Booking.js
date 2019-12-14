@@ -11,6 +11,7 @@ class Booking {
     thisBooking.render(element);
     thisBooking.initWidgets();
     thisBooking.getData();
+    thisBooking.selectTables();
 
   }
 
@@ -184,7 +185,6 @@ class Booking {
     thisBooking.dom.tables = document.querySelectorAll(select.booking.tables);
     // console.log('tables ', thisBooking.dom.tables);
 
-
   }
 
   initWidgets() {
@@ -198,6 +198,16 @@ class Booking {
     thisBooking.dom.wrapper.addEventListener('updated', function(){
       thisBooking.updateDOM();
     });
+  }
+
+  selectTables() {
+    const thisBooking = this;
+
+    for(let table of thisBooking.dom.tables){
+      table.addEventListener('click', function(event){
+        console.log('klik, klik', event);
+      });
+    }
   }
 
 }
