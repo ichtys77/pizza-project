@@ -103,7 +103,7 @@ class Booking {
         }
       }
     }
-    // console.log('thisBooking.booked ', thisBooking.booked);
+    console.log('thisBooking.booked ', thisBooking.booked);
     thisBooking.updateDOM();
   }
 
@@ -145,15 +145,15 @@ class Booking {
 
     for (let table of thisBooking.dom.tables) {
       let tableId = table.getAttribute(settings.booking.tableIdAttribute);
-      if(!isNaN(tableId)){
+      if (!isNaN(tableId)) {
         tableId = parseInt(tableId);
       }
 
-      if(
+      if (
         !allAvailable
         &&
         thisBooking.booked[thisBooking.date][thisBooking.hour].includes(tableId)
-      ){
+      ) {
         table.classList.add(classNames.booking.tableBooked);
       } else {
         table.classList.remove(classNames.booking.tableBooked);
@@ -183,7 +183,7 @@ class Booking {
     //console.log('datePickerWrapper: ', thisBooking.dom.datePicker);
     //console.log('hourPickerWrapper: ', thisBooking.dom.hourPicker);
     thisBooking.dom.tables = document.querySelectorAll(select.booking.tables);
-    // console.log('tables ', thisBooking.dom.tables);
+    console.log('tables ', thisBooking.dom.tables);
 
   }
 
@@ -195,7 +195,7 @@ class Booking {
     thisBooking.datePicker = new DatePicker(thisBooking.dom.datePicker);
     thisBooking.hourPicker = new HourPicker(thisBooking.dom.hourPicker);
 
-    thisBooking.dom.wrapper.addEventListener('updated', function(){
+    thisBooking.dom.wrapper.addEventListener('updated', function () {
       thisBooking.updateDOM();
     });
   }
@@ -203,9 +203,10 @@ class Booking {
   selectTables() {
     const thisBooking = this;
 
-    for(let table of thisBooking.dom.tables){
-      table.addEventListener('click', function(event){
-        console.log('klik, klik', event);
+    for (let table of thisBooking.dom.tables) {
+      table.addEventListener('click', function () {
+        table.classList.add(classNames.booking.tableBooked);
+        //console.log('unbooked'),
       });
     }
   }
