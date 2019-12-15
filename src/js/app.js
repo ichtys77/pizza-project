@@ -2,6 +2,7 @@ import { settings, select, classNames } from './settings.js';
 import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 import Booking from './components/Booking.js';
+// import Home from './components/Home.js';
 
 const app = {
 
@@ -32,6 +33,7 @@ const app = {
 
         /* get page id from href attribute */
         const id = clickedElement.getAttribute('href').replace('#', '');
+        //console.log(idFromHash);
 
         /* run thisApp.activatePage with that id */
         thisApp.activatePage(id);
