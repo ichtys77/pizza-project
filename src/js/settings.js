@@ -64,6 +64,10 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
+    phone: '.order-confirmation [type="tel"]',
+    email: '.order-confirmation [type="email"]',
+    submit: '.order-confirmation .btn-secondary',
+    starters: '.checkbox [type="checkbox"]',
   },
   nav: {
     links: '.main-nav a',
