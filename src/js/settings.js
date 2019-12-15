@@ -11,7 +11,7 @@ export const select = {
     cart: '#cart',
     pages: '#pages',
     booking: '.booking-wrapper',
-    home: '.home-wrapper',
+    //home: '.home-wrapper',
   },
   all: {
     menuProducts: '#product-list > .product',
@@ -71,7 +71,7 @@ export const select = {
     starters: '.checkbox [type="checkbox"]',
   },
   nav: {
-    links: '.main-nav a',
+    links: '.main-nav a, .home-buttons a',
   },
   // CODE ADDED END
 };
