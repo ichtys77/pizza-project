@@ -4,7 +4,7 @@ import { select, settings } from '../settings.js';
 
 class DatePicker extends BaseWidget {
   constructor(wrapper) {
-    super(wrapper, utils.dateToStr(new Date()));
+    super(wrapper, utils.dateToStr(new Date));
 
     const thisWidget = this;
 
@@ -16,7 +16,8 @@ class DatePicker extends BaseWidget {
   initPlugin() {
     const thisWidget = this;
 
-    thisWidget.minDate = new Date(thisWidget.value);
+    thisWidget.minDate = new Date();
+    console.log('thisWidget.minDate ',thisWidget.minDate);
     thisWidget.maxDate = new Date(utils.addDays(thisWidget.minDate, settings.datePicker.maxDaysInFuture));
 
     thisWidget.dom.input.addEventListener('input', function(){
