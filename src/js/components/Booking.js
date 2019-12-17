@@ -132,6 +132,8 @@ class Booking {
   updateDOM() {
     const thisBooking = this;
 
+    thisBooking.tableNumberArray = [];
+
     thisBooking.date = thisBooking.datePicker.value;
     console.log('thisBooking.date ', thisBooking.date);
     thisBooking.hour = utils.hourToNumber(thisBooking.hourPicker.value);
@@ -215,7 +217,6 @@ class Booking {
     thisBooking.dom.submit.addEventListener('click', function () {
       event.preventDefault();
       thisBooking.sendReservation();
-      thisBooking.tableNumberArray = [];
     });
 
     thisBooking.tableCheck();
@@ -249,7 +250,7 @@ class Booking {
           thisBooking.tableNumber = thisBooking.clickedElement.getAttribute(settings.booking.tableIdAttribute);
           console.log('thisBooking.tableNumber ', thisBooking.tableNumber);
           thisBooking.tableNumberArray.push(thisBooking.tableNumber);
-          console.log('thisBooking.tableNumberArray ', thisBooking.tableNumberArray)
+          console.log('thisBooking.tableNumberArray ', thisBooking.tableNumberArray);
         }
       });
     }
