@@ -271,9 +271,9 @@ class Booking {
       starters: [],
     };
 
-    for (let tableNumber of thisBooking.tableNumberArray){
-    payload.table.push(parseInt(tableNumber));
-  }
+    for (let tableNumber of thisBooking.tableNumberArray) {
+      payload.table.push(parseInt(tableNumber));
+    }
 
     for (let starter of thisBooking.dom.starters) {
       if (starter.checked == true) {
