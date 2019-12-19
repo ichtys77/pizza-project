@@ -127,6 +127,8 @@ class Booking {
         thisBooking.booked[date][hourBlock].push(table);
       }
     }
+
+    //console.log('thisBooking.booked ', thisBooking.booked)
   }
 
   updateDOM() {
@@ -296,9 +298,11 @@ class Booking {
       })
       .then(function (parsedResponse) {
         console.log('parsedResponse: ', parsedResponse);
+        thisBooking.getData();
       });
 
     thisBooking.getData();
+
   }
 
 }
